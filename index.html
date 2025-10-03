@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Pic Studio | Marketing Consultation & Digital Growth Agency</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        /* Define Brand Colors based on the logo's aesthetic */
+        :root {
+            --color-primary: #3b82f6; /* Blue for tech/trust */
+            --color-secondary: #f97316; /* Orange for energy/creativity */
+            --color-accent: #8b5cf6; /* Purple for sophistication */
+            --color-dark: #1f2937; /* Dark text */
+            --color-light: #f3f4f6; /* Light background */
+        }
+        .text-epic-primary { color: var(--color-dark); }
+        .text-epic-accent { color: var(--color-accent); }
+        .bg-epic-primary { background-color: var(--color-primary); }
+        .bg-epic-light { background-color: var(--color-light); }
+        .btn-primary {
+            background-color: var(--color-secondary);
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #ea580c; /* Darker orange */
+        }
+        /* Custom gradient style matching the logo's energy */
+        .bg-gradient-epic {
+    background: linear-gradient(270deg, #1d4ed8, #8b5cf6, #f97316);
+}
+        .font-sans { font-family: 'Inter', sans-serif; }
+
+        /* Animation for the Hero Icon (Subtle bounce) */
+        @keyframes subtleBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .icon-bounce { animation: subtleBounce 2s infinite ease-in-out; }
+
+        /* Styling for the Logo Image */
+        .logo-header {
+            height: 64px; /* Set height for header logo */
+            width: auto;
+            max-width: 180px;
+        }
+        .logo-hero-icon {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* Using the dynamic icon that communicates digital content */
+            filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.2)); 
+        }
+
+        /* Styling for the Iframe container */
+        .iframe-container {
+            width: 100%;
+            border-radius: 1rem; /* rounded-xl */
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-2xl */
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+
+        // --- ALL CUSTOM FORM SUBMISSION JAVASCRIPT HAS BEEN REMOVED ---
+
+        // Function to initialize Lucide icons
+        window.onload = () => {
+             if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        };
+    </script>
+</head>
+<body class="font-sans bg-white text-gray-800">
+
+    <!-- Header / Navigation (Simple & Clean) -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <!-- LOGO PLACEMENT: Header (Using cleaner image_496d42.png for text logo) -->
+                <img src="images/banner.png" 
+                     alt="e-Pic Studio Logo - Marketing Consultation Agency" 
+                     class="logo-header"
+                     onerror="this.style.display='none'; this.after(document.createTextNode('e-PicStudio'));">
+            </div>
+            <a href="#consultation" class="hidden sm:inline-block btn-primary px-5 py-2 text-sm font-semibold rounded-lg shadow-md hover:shadow-lg transition">
+                Start Growing Today
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gray-50 pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+            
+            <!-- Text Content -->
+            <div class="md:w-1/2 md:pr-12 space-y-6 text-center md:text-left">
+                <p class="text-lg font-semibold text-epic-accent uppercase tracking-wider">Marketing Solutions for Non-Marketing Teams</p>
+                <h2 class="text-5xl md:text-6xl font-extrabold leading-tight text-gray-900">
+                    Your <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">Dedicated Marketing Unit</span> is Here.
+                </h2>
+                <p class="text-xl text-gray-600 max-w-lg mx-auto md:mx-0">
+                    We craft custom, results-driven marketing strategies, handling everything from SEO to stunning graphics, so you can focus on running your business.
+                </p>
+
+                <!-- Call to Action -->
+                <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
+                    <a href="#consultation" class="btn-primary w-full sm:w-auto px-8 py-3 text-lg font-bold rounded-xl shadow-2xl transition transform hover:scale-105">
+                        Start Your Free Consultation
+                    </a>
+                    <a href="#services" class="text-gray-600 w-full sm:w-auto px-8 py-3 text-lg font-semibold rounded-xl border border-gray-300 hover:border-epic-accent transition hover:text-epic-accent">
+                        Explore Our Services
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Icon -->
+            <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center relative">
+                <div class="relative p-12 bg-white rounded-full shadow-2xl border-4 border-white transform hover:rotate-3 transition-transform duration-500">
+                    <!-- Icon Container - uses brand gradient and subtle bounce -->
+                    <div class="w-64 h-64 bg-gradient-epic rounded-full flex items-center justify-center icon-bounce shadow-xl p-8">
+                        <!-- Replaced Lucide Icon with your dynamic logo icon for visual impact -->
+                        <img src="images/logo.png" 
+                             alt="e-Pic Studio Dynamic Icon" 
+                             class="logo-hero-icon" 
+                             style="filter: none; width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                </div>
+            </div>
+            <!-- END Hero Icon -->
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 md:py-32 bg-epic-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-4xl font-extrabold text-gray-900 mb-4">Your All-in-One Marketing Powerhouse</h3>
+            <p class="text-xl text-gray-600 mb-16 max-w-3xl mx-auto">
+                We handle the strategy, content, and execution across every channel, delivering the growth metrics that matter most to your business.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <!-- Service Card 1: Strategic Consulting -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 border-b-4 border-purple-600">
+                    <i data-lucide="compass" class="w-10 h-10 text-epic-accent mx-auto mb-4 stroke-1"></i>
+                    <h4 class="text-2xl font-bold text-gray-900 mb-3">Marketing Strategy & Planning</h4>
+                    <p class="text-gray-600">We define your target audience, identify growth opportunities, and build a cohesive, results-driven blueprint.</p>
+                </div>
+
+                <!-- Service Card 2: SEO & Lead Generation -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 border-b-4 border-purple-600">
+                    <i data-lucide="search-check" class="w-10 h-10 text-epic-accent mx-auto mb-4 stroke-1"></i>
+                    <h4 class="text-2xl font-bold text-gray-900 mb-3">SEO & Online Presence</h4>
+                    <p class="text-gray-600">Boost your rankings, drive organic traffic, and optimize your website to convert visitors into qualified leads.</p>
+                </div>
+
+                <!-- Service Card 3: Graphic Design & Branding -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 border-b-4 border-purple-600">
+                    <i data-lucide="palette" class="w-10 h-10 text-epic-accent mx-auto mb-4 stroke-1"></i>
+                    <h4 class="text-2xl font-bold text-gray-900 mb-3">Graphic Designing & Branding</h4>
+                    <p class="text-gray-600">Create stunning visuals, logos, and brand assets that ensure a consistent, professional, and memorable look.</p>
+                </div>
+
+                <!-- Service Card 4: Content Marketing -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 border-b-4 border-purple-600">
+                    <i data-lucide="file-text" class="w-10 h-10 text-epic-accent mx-auto mb-4 stroke-1"></i>
+                    <h4 class="text-2xl font-bold text-gray-900 mb-3">Content Marketing</h4>
+                    <p class="text-gray-600">Develop high-value blog posts, case studies, and engaging written content that establishes you as an industry expert.</p>
+                </div>
+
+                <!-- Service Card 5: Social Media Management -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 border-b-4 border-purple-600">
+                    <i data-lucide="share-2" class="w-10 h-10 text-epic-accent mx-auto mb-4 stroke-1"></i>
+                    <h4 class="text-2xl font-bold text-gray-900 mb-3">Social Media Management</h4>
+                    <p class="text-gray-600">Build community, run engaging campaigns, and manage your presence across all major social platforms.</p>
+                </div>
+
+                <!-- Service Card 6: Advertisement Making -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 border-b-4 border-purple-600">
+                    <i data-lucide="megaphone" class="w-10 h-10 text-epic-accent mx-auto mb-4 stroke-1"></i>
+                    <h4 class="text-2xl font-bold text-gray-900 mb-3">Advertisement Making (PPC)</h4>
+                    <p class="text-gray-600">Craft high-converting ad copy and visuals for platforms like Google Ads and social media to drive immediate sales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA / Consultation Form Section -->
+    <section id="consultation" class="py-20 md:py-32 bg-epic-primary text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-4xl font-extrabold mb-4">Ready to Ignite Your Visual Story?</h3>
+            <p class="text-xl opacity-90 mb-10">
+                Schedule your free 30-minute growth consultation.
+            </p>
+
+            <div class="iframe-container">
+                <!-- 
+                    *** PASTE YOUR OFFICIAL GOOGLE FORM EMBED CODE HERE ***
+                    
+                    1. Go to your Google Form.
+                    2. Click 'Send' (top right).
+                    3. Click the Embed HTML icon (< >).
+                    4. Copy the entire <iframe> code block and replace this comment with it.
+                -->
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeYhERkRrXH_laYFELI2_oqnz5ublK4OTjS872659ev-AcD-A/viewform?embedded=true" width="100%" 
+                    height="700"  frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            
+            <div class="mb-4 md:mb-0">
+                <!-- LOGO PLACEMENT: Footer (Using cleaner image_496d42.png for text logo) -->
+                <img src="Untitled-1.png" 
+                     alt="e-Pic Studio Logo" 
+                     class="logo-header filter brightness-200"
+                     onerror="this.style.display='none'; this.after(document.createTextNode('e-PicStudio'));">
+                <p class="text-sm mt-1 text-gray-400">IGNITE YOUR VISUAL STORY</p>
+            </div>
+
+             <div class="flex space-x-4 text-sm text-gray-400">
+                <!-- Combined Icons: Email and Phone -->
+                <a href="mailto:souravmajhi840@gmail.com" title="Email us" class="hover:text-epic-accent transition">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </a>
+                <a href="tel:+918420374845" title="Call us" class="hover:text-epic-accent transition">
+                    <i data-lucide="phone" class="w-6 h-6"></i>
+                </a>
+            </div>
+
+            <div class="mt-4 md:mt-0 text-sm text-gray-500">
+                &copy; 2025 e-Pic Studio. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons again just in case -->
+    <script>
+         window.onload = () => {
+             if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        };
+    </script>
+</body>
+</html>
