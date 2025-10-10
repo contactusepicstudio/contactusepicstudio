@@ -120,8 +120,8 @@
 
                 <!-- Call to Action -->
                 <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
-                    <a href="needs-assessment.html" class="btn-primary w-full sm:w-auto px-8 py-3 text-lg font-bold rounded-xl shadow-2xl transition transform hover:scale-105">
-                        Start Your Free Consultation
+                    <a href="#consultation" class="btn-primary w-full sm:w-auto px-8 py-3 text-lg font-bold rounded-xl shadow-2xl transition transform hover:scale-105">
+                        Start Your Consultation
                     </a>
                     <a href="#services" class="text-gray-600 w-full sm:w-auto px-8 py-3 text-lg font-semibold rounded-xl border border-gray-300 hover:border-epic-accent transition hover:text-epic-accent">
                         Explore Our Services
@@ -131,17 +131,34 @@
 
             <!-- Hero Icon -->
             <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center relative">
-                <div class="relative p-12 bg-white rounded-full shadow-2xl border-4 border-white transform hover:rotate-3 transition-transform duration-500">
-                    <!-- Icon Container - uses brand gradient and subtle bounce -->
-                    <div class="w-64 h-64 bg-gradient-epic rounded-full flex items-center justify-center icon-bounce shadow-xl p-8">
-                        <!-- Replaced Lucide Icon with your dynamic logo icon (Updated to images/logo.png) -->
-                        <img src="images/logo.png" 
-                             alt="e-Pic Studio Dynamic Icon" 
-                             class="logo-hero-icon" 
-                             style="filter: none; width: 100%; height: 100%; object-fit: contain;">
-                    </div>
-                </div>
+
+    <div id="hero-boost-section" class="flex flex-col items-center p-8 rounded-xl transition duration-300 group cursor-pointer">
+        
+        <div class="relative p-12 bg-white rounded-full shadow-2xl border-4 border-white transform hover:rotate-3 transition-transform duration-500">
+            
+            <div class="w-64 h-64 bg-gradient-epic rounded-full flex items-center justify-center shadow-xl p-8 
+                        transition-transform duration-500 ease-out 
+                        group-hover:rotate-[360deg] group-hover:scale-105">
+                
+                <img src="images/logo.png" 
+                     alt="e-Pic Studio Dynamic Icon" 
+                     class="w-full h-full object-contain">
             </div>
+        </div>
+
+        <h2 class="mt-8 text-5xl md:text-6xl font-extrabold leading-tight text-gray-900 transition-opacity duration-300">
+            <span id="odometer-display" class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300">
+                100
+            </span>
+            <span class="text-gray-900">% Boost In Your Marketing</span>
+        </h2>
+        
+        <p class="text-sm text-gray-500 mt-2 transition-opacity duration-500 group-hover:opacity-0">
+            <span class="animate-pulse">Hover me for a boost!</span>
+        </p>
+
+    </div> 
+    </div>
             <!-- END Hero Icon -->
         </div>
     </section>
@@ -260,6 +277,57 @@
                 lucide.createIcons();
             }
         };
+         const heroSection = document.getElementById('hero-boost-section'); // This is now the icon container
+    const odometer = document.getElementById('odometer-display');
+    
+    // Starting and ending values for the animation
+    const START_VALUE = 100;
+    const END_VALUE = 500;
+    const DURATION = 500; // milliseconds (fast turbo boost)
+    
+    let animationFrameId;
+
+    // Function to animate the number count-up
+    function animateOdometer(timestamp) {
+        if (!animateOdometer.startTime) {
+            animateOdometer.startTime = timestamp;
+        }
+
+        const elapsed = timestamp - animateOdometer.startTime;
+        const progress = Math.min(1, elapsed / DURATION);
+        
+        // Calculate the current value
+        const currentValue = START_VALUE + Math.floor(progress * (END_VALUE - START_VALUE));
+        
+        odometer.textContent = currentValue;
+
+        if (progress < 1) {
+            animationFrameId = requestAnimationFrame(animateOdometer);
+        } else {
+             odometer.textContent = END_VALUE; 
+        }
+    }
+    
+    // Function to reset the odometer to the start value
+    function resetOdometer() {
+        cancelAnimationFrame(animationFrameId);
+        delete animateOdometer.startTime;
+        odometer.textContent = START_VALUE;
+    }
+
+    // Event listener for mouse enter (Hover)
+    heroSection.addEventListener('mouseenter', () => {
+        resetOdometer();
+        animationFrameId = requestAnimationFrame(animateOdometer);
+    });
+
+    // Event listener for mouse leave (Hover ends)
+    heroSection.addEventListener('mouseleave', () => {
+        resetOdometer();
+    });
+
+    // Initialize the odometer value on load
+    odometer.textContent = START_VALUE;
     </script>
 </body>
 </html>
