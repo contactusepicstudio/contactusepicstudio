@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Pic Studio | Needs Assessment</title>
+    <!-- Load Tailwind CSS and Lucide Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        /* Inherit Brand Colors */
+        :root {
+            --color-primary: #3b82f6; 
+            --color-secondary: #f97316; 
+            --color-accent: #8b5cf6; 
+        }
+        .bg-epic-primary { background-color: var(--color-primary); }
+        .text-epic-accent { color: var(--color-accent); }
+        .logo-header { height: 64px; width: auto; max-width: 180px; }
+        .logo-assessment { height: 80px; width: auto; max-width: 250px; } /* Moderately bigger logo */
+        .iframe-container {
+            width: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        /* Define the full-page gradient background */
+        .bg-gradient-epic {
+            background: linear-gradient(270deg, #1d4ed8, #8b5cf6, #f97316);
+        }
+        .btn-primary {
+            background-color: var(--color-secondary);
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #ea580c; /* Darker orange */
+        }
+    </style>
+    <script>
+        window.onload = () => { if (typeof lucide !== 'undefined') { lucide.createIcons(); } };
+    </script>
+</head>
+<!-- UPDATED: Added bg-gradient-epic to the body and changed text color to white for contrast -->
+<body class="font-sans bg-gradient-epic text-white min-h-screen"> 
+
+    <!-- Header (Simple, Logo and Home Button) -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo - Moderately Big -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="images/banner.png" 
+                     alt="e-Pic Studio Logo - Marketing Consultation Agency" 
+                     class="logo-assessment"
+                     onerror="this.style.display='none'; this.after(document.createTextNode('e-PicStudio'));">
+            </a>
+            <!-- Back Button -->
+            <a href="index.html#consultation" class="bg-gray-200 text-gray-600 px-5 py-2 text-sm font-semibold rounded-lg hover:bg-gray-300 transition">
+                Back to Home
+            </a>
+        </div>
+    </header>
+
+    <main class="py-16 md:py-24">
+        <!-- Content Container remains white for high contrast against the gradient background -->
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-white p-8 md:p-12 rounded-xl shadow-2xl text-gray-800">
+            <!-- Main Title -->
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900">
+                Tell us what do you need?
+            </h1>
+            <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+                This short questionnaire helps us understand your business goals and current marketing challenges. Your answers ensure we prepare the most relevant strategy for your consultation.
+            </p>
+
+            <div class="iframe-container mt-10">
+                <!-- 
+                    The form is embedded here, ensuring the white background of the container contrasts with the form content.
+                -->
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSc-SJxyoIyiaI2RaybwWU9g7j9M1c2q6wIJ18hV4mFZPLD5Pg/viewform?embedded=true"
+                    width="100%" 
+                    height="1200" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">
+                        Loading Detailed Form...
+                </iframe>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer remains dark for consistency -->
+    <footer class="bg-gray-900 text-white py-6 mt-16">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-500">
+            &copy; 2025 e-Pic Studio. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
