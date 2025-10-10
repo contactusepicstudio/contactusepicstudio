@@ -29,10 +29,10 @@
         .btn-primary:hover {
             background-color: #ea580c; /* Darker orange */
         }
-        /* Custom gradient style matching the logo's energy */
+        /* Custom gradient style matching the logo's energy - UPDATED DIRECTION */
         .bg-gradient-epic {
-    background: linear-gradient(270deg, #1d4ed8, #8b5cf6, #f97316);
-}
+            background: linear-gradient(270deg, #1d4ed8, #8b5cf6, #f97316);
+        }
         .font-sans { font-family: 'Inter', sans-serif; }
 
         /* Animation for the Hero Icon (Subtle bounce) */
@@ -42,7 +42,7 @@
         }
         .icon-bounce { animation: subtleBounce 2s infinite ease-in-out; }
 
-        /* Styling for the Logo Image */
+        /* Styling for the Logo Image - UPDATED SIZE */
         .logo-header {
             height: 64px; /* Set height for header logo */
             width: auto;
@@ -91,14 +91,15 @@
     <header class="sticky top-0 z-50 bg-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <!-- LOGO PLACEMENT: Header (Using cleaner image_496d42.png for text logo) -->
+                <!-- LOGO PLACEMENT: Header (Updated to images/banner.png) -->
                 <img src="images/banner.png" 
                      alt="e-Pic Studio Logo - Marketing Consultation Agency" 
                      class="logo-header"
                      onerror="this.style.display='none'; this.after(document.createTextNode('e-PicStudio'));">
             </div>
-            <a href="#consultation" class="hidden sm:inline-block btn-primary px-5 py-2 text-sm font-semibold rounded-lg shadow-md hover:shadow-lg transition">
-                Start Growing Today
+            <!-- BUTTON UPDATED TO REDIRECT TO NEW PAGE -->
+            <a href="needs-assessment.html" class="hidden sm:inline-block btn-primary px-5 py-2 text-sm font-semibold rounded-lg shadow-md hover:shadow-lg transition">
+                Tell us what do you need?
             </a>
         </div>
     </header>
@@ -119,7 +120,7 @@
 
                 <!-- Call to Action -->
                 <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
-                    <a href="#consultation" class="btn-primary w-full sm:w-auto px-8 py-3 text-lg font-bold rounded-xl shadow-2xl transition transform hover:scale-105">
+                    <a href="needs-assessment.html" class="btn-primary w-full sm:w-auto px-8 py-3 text-lg font-bold rounded-xl shadow-2xl transition transform hover:scale-105">
                         Start Your Free Consultation
                     </a>
                     <a href="#services" class="text-gray-600 w-full sm:w-auto px-8 py-3 text-lg font-semibold rounded-xl border border-gray-300 hover:border-epic-accent transition hover:text-epic-accent">
@@ -133,7 +134,7 @@
                 <div class="relative p-12 bg-white rounded-full shadow-2xl border-4 border-white transform hover:rotate-3 transition-transform duration-500">
                     <!-- Icon Container - uses brand gradient and subtle bounce -->
                     <div class="w-64 h-64 bg-gradient-epic rounded-full flex items-center justify-center icon-bounce shadow-xl p-8">
-                        <!-- Replaced Lucide Icon with your dynamic logo icon for visual impact -->
+                        <!-- Replaced Lucide Icon with your dynamic logo icon (Updated to images/logo.png) -->
                         <img src="images/logo.png" 
                              alt="e-Pic Studio Dynamic Icon" 
                              class="logo-hero-icon" 
@@ -200,12 +201,12 @@
         </div>
     </section>
     
-    <!-- CTA / Consultation Form Section -->
+    <!-- CTA / Consultation Form Section (Removed since the form is moving to a new page) -->
     <section id="consultation" class="py-20 md:py-32 bg-epic-primary text-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h3 class="text-4xl font-extrabold mb-4">Ready to Ignite Your Visual Story?</h3>
             <p class="text-xl opacity-90 mb-10">
-                Schedule your free 30-minute growth consultation.
+                Schedule your growth consultation.
             </p>
 
             <div class="iframe-container">
@@ -228,7 +229,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
             
             <div class="mb-4 md:mb-0">
-                <!-- LOGO PLACEMENT: Footer (Using cleaner image_496d42.png for text logo) -->
+                <!-- LOGO PLACEMENT: Footer (Updated to images/banner.png) -->
                 <img src="images/banner.png" 
                      alt="e-Pic Studio Logo" 
                      class="logo-header filter brightness-200"
@@ -236,7 +237,7 @@
                 <p class="text-sm mt-1 text-gray-400">IGNITE YOUR VISUAL STORY</p>
             </div>
 
-             <div class="flex space-x-4 text-sm text-gray-400">
+            <div class="flex space-x-4 text-sm text-gray-400">
                 <!-- Combined Icons: Email and Phone -->
                 <a href="mailto:contactusepicstudio@gmail.com" title="Email us" class="hover:text-epic-accent transition">
                     <i data-lucide="mail" class="w-6 h-6"></i>
@@ -262,5 +263,3 @@
     </script>
 </body>
 </html>
-
-
